@@ -11,6 +11,7 @@ import { DepartmentService } from "../../../services/department.service";
 })
 export class NewDepartmentComponent implements OnInit {
   departmentForm: FormGroup;
+  submitted = false;
 
   constructor(
     private _location: Location,
@@ -36,6 +37,10 @@ export class NewDepartmentComponent implements OnInit {
   }
 
   private sendCreateDepartment() {
+    this.submitted = true;
+    if (this.departmentForm.invalid) {
+      return;
+    }
     const department = <DepartmentModel>this.departmentForm.value;
     this._departmentService.postDepartment(department).subscribe();
     this.back();

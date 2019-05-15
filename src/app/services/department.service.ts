@@ -1,10 +1,9 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Observable } from "rxjs";
-
 import { throwError } from "rxjs";
 import { catchError } from "rxjs/operators";
-import { Endpoints } from "../helpers/constants";
+import { BaseUrl } from "../services/api.config";
 import { DepartmentModel } from "../models/department.model";
 import { AuthBearerAndContentTypeJsonHeaders } from "../helpers/httpHeaders";
 import { ResponseModel } from '../models/response.model';
@@ -16,7 +15,7 @@ export class DepartmentService {
   loadDepartments(): Observable<ResponseModel> {
     return this._httpClient
       .get<ResponseModel>(
-        `${Endpoints.departmentUrl}`,
+        `${BaseUrl.departments}`,
         AuthBearerAndContentTypeJsonHeaders.options
       )
       .pipe(
@@ -33,7 +32,7 @@ export class DepartmentService {
 
   getDepartment(_id: string): Observable<DepartmentModel> {
     return this._httpClient
-      .get<DepartmentModel>(`${Endpoints.departmentUrl}${_id}`)
+      .get<DepartmentModel>(`${BaseUrl.departments}${_id}`)
       .pipe(
         catchError((err: HttpErrorResponse) => {
           return throwError(
@@ -47,7 +46,7 @@ export class DepartmentService {
 
   postDepartment(department: DepartmentModel): Observable<any> {
     return this._httpClient
-      .post<DepartmentModel>(`${Endpoints.departmentUrl}`, department)
+      .post<DepartmentModel>(`${BaseUrl.departments}`, department)
       .pipe(
         catchError((err: HttpErrorResponse) => {
           return throwError(
@@ -63,7 +62,7 @@ export class DepartmentService {
     console.log("DEPT ID IS ", department._id);
     return this._httpClient
       .put<DepartmentModel>(
-        `${Endpoints.departmentUrl}${department._id}`,
+        `${BaseUrl.departments}${department._id}`,
         department
       )
       .pipe(
@@ -79,7 +78,7 @@ export class DepartmentService {
 
   deleteDepartment(_id: string): Observable<any> {
     return this._httpClient
-      .delete<DepartmentModel>(`${Endpoints.departmentUrl}${_id}`)
+      .delete<DepartmentModel>(`${BaseUrl.departments}${_id}`)
       .pipe(
         catchError((err: HttpErrorResponse) => {
           return throwError(
