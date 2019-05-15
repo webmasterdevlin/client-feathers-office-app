@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+@media (max-width: 575px) {
+  /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
+  .body-content {
+    padding-top: 60px;
+  }
+}
+
+.login-signup-bg{
+  background: url("src/assets/images/officebg.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 10%;
+  padding-bottom: 20%;
+}
+
+.outside-form {
+  color: cornsilk;
+}
+.outside-form a {
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.opaq {
+  opacity: 0.92;
+}
