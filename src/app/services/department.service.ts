@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { throwError } from "rxjs";
 import { catchError } from "rxjs/operators";
-import { BaseUrl } from "../services/api.config";
+import { BaseUrl } from "./api.config";
 import { DepartmentModel } from "../models/department.model";
 import { AuthBearerAndContentTypeJsonHeaders } from "../helpers/httpHeaders";
 import { ResponseModel } from "../models/response.model";
