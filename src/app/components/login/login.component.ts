@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { UserService } from "../../services/user.service";
-import { LoginModel } from "../../models/login.model";
+import { UserModel } from "../../models/user.model";
 
 @Component({
   selector: "app-login",
@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
   }
 
   private sendLoginForm(): void {
-    const loginModel = <LoginModel>this.loginForm.value;
+    const loginModel = this.loginForm.value;
     this.userService.signin(loginModel).subscribe(
       response => {
         const token = (<any>response).accessToken;
