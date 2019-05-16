@@ -10,6 +10,6 @@ export class LogoutComponent implements OnInit {
 
   ngOnInit() {
     localStorage.removeItem("accessToken");
-    this.router.navigateByUrl("/login");
+    this.router.navigateByUrl("/authentication");
   }
 }

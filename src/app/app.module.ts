@@ -44,7 +44,7 @@ import { LogoutComponent } from "./components/logout/logout.component";
           }
         ]
       },
-      { path: "login", component: LoginComponent },
+      { path: "authentication", component: LoginComponent },
       { path: "logout", component: LogoutComponent },
       { path: "signup", component: SignupComponent },
       { path: "**", redirectTo: "" }

@@ -19,6 +19,6 @@ export class HeaderMenuComponent {
   // Method navigation
   logOut() {
     localStorage.removeItem("accessToken");
-    this.router.navigateByUrl("/login");
+    this.router.navigateByUrl("/authentication");
   }
 }

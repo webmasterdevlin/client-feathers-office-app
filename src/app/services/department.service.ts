@@ -6,7 +6,7 @@ import { catchError } from "rxjs/operators";
 import { BaseUrl } from "../services/api.config";
 import { DepartmentModel } from "../models/department.model";
 import { AuthBearerAndContentTypeJsonHeaders } from "../helpers/httpHeaders";
-import { ResponseModel } from '../models/response.model';
+import { ResponseModel } from "../models/response.model";
 
 @Injectable()
 export class DepartmentService {
@@ -19,7 +19,6 @@ export class DepartmentService {
         AuthBearerAndContentTypeJsonHeaders.options
       )
       .pipe(
-
         catchError((err: HttpErrorResponse) => {
           return throwError(
             window.alert(

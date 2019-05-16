@@ -12,7 +12,7 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   signin(loginModel: LoginModel): Observable<any> {
-    return this.http.post<LoginModel>(BaseUrl.login, loginModel, {
+    return this.http.post<LoginModel>(BaseUrl.authentication, loginModel, {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
       })
@@ -20,7 +20,7 @@ export class UserService {
   }
 
   signup(user: UserModel): Observable<any> {
-    return this.http.post<UserModel>(BaseUrl.register, user, {
+    return this.http.post<UserModel>(BaseUrl.users, user, {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
       })

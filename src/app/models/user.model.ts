@@ -1,7 +1,5 @@
 export class UserModel {
-  username: string;
+  strategy = "local";
   email: string;
   password: string;
-  firstName: string;
-  lastName: string;
 }
